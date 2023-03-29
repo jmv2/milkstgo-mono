@@ -62,6 +62,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>milkstgo-prod</finalName>
     </build>
 
 </project>

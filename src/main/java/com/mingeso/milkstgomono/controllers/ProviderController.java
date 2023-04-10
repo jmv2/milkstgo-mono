@@ -26,7 +26,7 @@ public class ProviderController {
     public String newProvider(@ModelAttribute ProviderEntity provider, Model model){
         model.addAttribute("provider", provider);
         providerService.saveProvider(provider);
-        return "formProviders";
+        return "index";
     }
 
     @GetMapping("/nuevo-proveedor")

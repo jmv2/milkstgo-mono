@@ -1,4 +1,4 @@
-package com.mingeso.milkstgomono.entity;
+package com.mingeso.milkstgomono.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,5 +17,10 @@ public class ProviderEntity {
     @Id
     @GeneratedValue
     private Long id;
+
+    private String codProvider;
+    private String nameProvider;
+    private String catProvider;
+    private boolean retention;
 
 }

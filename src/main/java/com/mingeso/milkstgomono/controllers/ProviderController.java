@@ -15,24 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProviderController {
     @Autowired
     ProviderService providerService;
-
-    @GetMapping
-    public String index(){
-
-        return "index";
+    @GetMapping("/nuevo-proveedor")
+    public String formProvider(Model model){
+        model.addAttribute("provider", new ProviderEntity());
+        return "formProviders";
     }
-
     @PostMapping("/nuevo-proveedor")
     public String newProvider(@ModelAttribute ProviderEntity provider, Model model){
         model.addAttribute("provider", provider);
         providerService.saveProvider(provider);
         return "index";
-    }
-
-    @GetMapping("/nuevo-proveedor")
-    public String formProvider(Model model){
-        model.addAttribute("provider", new ProviderEntity());
-        return "formProviders";
     }
 
     @GetMapping("/borrar-todo")

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingreso proveedor</title>
+    <link th:href="@{css/MisEstilos.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/MisEstilos.css"/>
+</head>
+<body>
+<h2>Crear nuevo proveedor</h2>
+<br>
+<form th:action="@{/importar-acopio}" enctype="multipart/form-data" method="post">
+    <input type="file" name="excelFile" />
+    <br>
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+<br>
+<a th:href="@{~/}">
+    Volver al inicio
+</a>
+<footer>
+    &copy; Milk Santiago 2077
+</footer>
+</body>
+</html>

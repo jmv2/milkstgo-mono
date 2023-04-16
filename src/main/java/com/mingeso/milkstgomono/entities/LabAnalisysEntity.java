@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "butterfat")
-public class ButterfatEntity {
+@Table(name = "LabAnalisys")
+public class LabAnalisysEntity {
     @Id
     @GeneratedValue
     private Long id;

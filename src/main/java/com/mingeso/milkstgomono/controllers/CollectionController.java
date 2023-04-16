@@ -2,19 +2,16 @@ package com.mingeso.milkstgomono.controllers;
 
 import com.mingeso.milkstgomono.entities.CollectionEntity;
 import com.mingeso.milkstgomono.services.CollectionService;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,11 +32,11 @@ public class CollectionController {
 
     @GetMapping("/importar")
     public String importForm() {
-        return "acopio";
+        return "collection";
     }
 
     @PostMapping("/importar")
-    public String importCollection(@RequestParam("collectionExcelFile") MultipartFile file) throws IOException {
+    public String importMilkCollection(@RequestParam("collectionExcelFile") MultipartFile file) throws IOException {
 
         Workbook workbook = new XSSFWorkbook(file.getInputStream());
         Sheet sheet = workbook.getSheet("Hoja1");

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -19,14 +20,21 @@ public class ProviderController {
     ProviderService providerService;
     @GetMapping("/nuevo")
     public String formProvider(Model model){
+        List<String> options = new ArrayList<String>();
+        options.add("A");
+        options.add("B");
+        options.add("C");
+        options.add("D");
+
+        model.addAttribute("options", options);
         model.addAttribute("provider", new ProviderEntity());
-        return "formProviders";
+        return "new-provider";
     }
     @PostMapping("/nuevo")
     public String newProvider(@ModelAttribute ProviderEntity provider, Model model){
         model.addAttribute("provider", provider);
         providerService.saveProvider(provider);
-        return "index";
+        return "redirect:/";
     }
 
     @GetMapping("/todos")

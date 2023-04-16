@@ -25,4 +25,5 @@ public class ProviderService {
         List<ProviderEntity> providerEntityList = (List<ProviderEntity>) providerRepository.findAll();
         return providerEntityList;
     }
+
 }

@@ -14,3 +14,11 @@ footer {
     width: 50%;
 }
 
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+thead {
+    text-align: center;
+}

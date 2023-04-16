@@ -48,8 +48,12 @@ public class CollectionController {
            Row row = sheet.getRow(i);
            Date dateCollection = row.getCell(0).getDateCellValue();
            String turn = row.getCell(1).getStringCellValue();
+
            Double codProviderNum = row.getCell(2).getNumericCellValue();
            String codProvider = codProviderNum.toString();
+           codProvider = codProvider.substring(0, codProvider.indexOf("."));
+
+
            double milkAmount = row.getCell(3).getNumericCellValue();
 
            CollectionEntity collectionEntity = new CollectionEntity();

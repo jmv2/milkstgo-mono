@@ -24,6 +24,12 @@ public class CollectionService {
         collectionRepository.deleteAll();
     }
 
+    public ArrayList<CollectionEntity> getAllCollections(){
+        ArrayList<CollectionEntity> collections = new ArrayList<>();
+        collections = (ArrayList<CollectionEntity>) collectionRepository.findAll();
+        return collections;
+    }
+
     public ArrayList<CollectionEntity> getCollectionsByProviderCod(ProviderEntity provider) {
         ArrayList<CollectionEntity> collections = new ArrayList<>();
         collections = collectionRepository.getCollectionEntitiesByCodProvider(provider.getCodProvider());

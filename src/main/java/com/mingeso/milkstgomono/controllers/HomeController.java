@@ -15,11 +15,4 @@ public class HomeController {
 
         return "index";
     }
-    @GetMapping("/testReport")
-    public String testReporting(){
-        ProviderEntity provider = new ProviderEntity();
-        provider.setCodProvider("1003.0");
-        reportingService.milkCollectionPayment(provider);
-        return "redirect:/";
-    }
 }
